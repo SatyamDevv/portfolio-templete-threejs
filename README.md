@@ -2,7 +2,7 @@
 
 A modern personal portfolio website built with Next.js and Three.js, featuring interactive 3D elements, motion animations, and responsive design.
 
-![Portfolio Preview](https://portfolio-templete-threejs.vercel.app/)
+[Live Demo](https://portfolio-templete-threejs.vercel.app/)
 
 ## Features
 
