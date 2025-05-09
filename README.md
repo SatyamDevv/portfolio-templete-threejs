@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 3D Portfolio Website with Next.js
+
+A modern personal portfolio website built with Next.js and Three.js, featuring interactive 3D elements, motion animations, and responsive design.
+
+![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Preview)
+
+## Features
+
+- **Interactive 3D Environment**: Immersive 3D scene created with Three.js and React Three Fiber
+- **Smooth Animations**: Using Framer Motion for fluid UI transitions
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Section-Based Navigation**: Smooth scrolling with dynamic section highlighting
+- **Modern UI**: Glass morphism effects and animated components
+- **Dark Theme**: Eye-friendly dark mode design
+
+## Project Structure
+
+```
+portfolio-textures/
+├── public/            # Static assets and 3D models
+├── src/
+│   ├── app/           # Next.js app router files
+│   ├── components/    # Reusable React components
+│   │   ├── Scene.js   # 3D environment setup
+│   │   └── ...        # Other UI components
+│   └── data/          # Portfolio content data
+└── ...
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or later
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/satyamdevv/portfolio-textures.git
+cd portfolio-textures
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the portfolio.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend Framework**: [Next.js](https://nextjs.org/)
+- **3D Rendering**: [Three.js](https://threejs.org/) and [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **Font**: [Geist](https://vercel.com/font) from Vercel
 
-## Learn More
+## Performance Optimization
 
-To learn more about Next.js, take a look at the following resources:
+- Dynamic loading of 3D elements to improve initial load time
+- Asset compression and optimization
+- Code splitting with Next.js
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is configured for easy deployment on Vercel:
 
-## Deploy on Vercel
+1. Push your code to a GitHub repository
+2. Import the project to [Vercel](https://vercel.com/import)
+3. Vercel will automatically deploy your application
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For other platforms, refer to the deployment guides:
+- [Netlify deployment guide](https://docs.netlify.com/integrations/frameworks/next-js/)
+- [AWS Amplify deployment guide](https://docs.amplify.aws/guides/hosting/nextjs/q/platform/js/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- 3D models and textures from [source]
+- Inspiration from [source]

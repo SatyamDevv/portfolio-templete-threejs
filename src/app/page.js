@@ -112,7 +112,7 @@ const GlassSection = ({ id, className, children, isActive, setActive }) => {
           setActive(id);
         }
       },
-      { threshold: 0.5, rootMargin: '0px' }
+      { threshold: 0.3, rootMargin: '-10% 0px' }
     );
     
     const currentRef = sectionRef.current;
@@ -131,13 +131,13 @@ const GlassSection = ({ id, className, children, isActive, setActive }) => {
     <motion.section
       id={id}
       ref={sectionRef}
-      className={`min-h-screen flex items-center justify-center relative z-10 ${className}`}
+      className={`min-h-screen flex items-center justify-center relative z-10 py-16 md:py-0 ${className}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: isActive ? 1 : 0.3 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="container mx-auto px-8">
-        <div className="backdrop-blur-xl rounded-2xl backdrop-filter p-8 bg-white/5 border border-white/10 shadow-xl">
+      <div className="container mx-auto px-4 md:px-8 w-full">
+        <div className="backdrop-blur-xl rounded-2xl backdrop-filter p-4 md:p-8 bg-white/5 border border-white/10 shadow-xl">
           {children}
         </div>
       </div>
@@ -605,48 +605,48 @@ export default function Home() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-8 text-center"
+            className="mb-6 md:mb-8 text-center"
           >
-            <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mb-6"></div>
-            <h3 className="text-purple-400 uppercase tracking-wider text-sm font-semibold mb-2">My journey</h3>
-            <h2 className="text-4xl font-bold text-white mb-10">Experience & Education</h2>
+            <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mb-4 md:mb-6"></div>
+            <h3 className="text-purple-400 uppercase tracking-wider text-sm font-semibold mb-1 md:mb-2">My journey</h3>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-10">Experience & Education</h2>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-6xl mx-auto">
             <div>
               <motion.div 
-                className="flex items-center mb-6"
+                className="flex items-center mb-4 md:mb-6"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5 }}
               >
-                <HiLightningBolt className="text-2xl mr-3 text-purple-400" />
-                <h3 className="text-2xl font-semibold text-white">Work Experience</h3>
+                <HiLightningBolt className="text-xl md:text-2xl mr-2 md:mr-3 text-purple-400" />
+                <h3 className="text-xl md:text-2xl font-semibold text-white">Work Experience</h3>
               </motion.div>
               
-              <div className="space-y-8">
+              <div className="space-y-4 md:space-y-8">
                 {experience.map((job, index) => (
                   <motion.div 
                     key={index}
-                    className="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-xl relative overflow-hidden group"
+                    className="bg-white/5 border border-white/10 backdrop-blur-md p-4 md:p-6 rounded-xl relative overflow-hidden group"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, delay: index * 0.2 }}
                   >
                     <div className="absolute h-full w-1 bg-purple-500/50 left-0 top-0 group-hover:bg-purple-500 transition-colors duration-300"></div>
                     
                     <div className="pl-3">
-                      <h4 className="text-xl font-semibold text-white">{job.title}</h4>
-                      <div className="flex justify-between items-center mb-4 mt-1">
-                        <span className="text-purple-300">{job.company}</span>
-                        <span className="text-gray-400 text-sm px-3 py-1 rounded-full bg-white/5">{job.period}</span>
+                      <h4 className="text-lg md:text-xl font-semibold text-white">{job.title}</h4>
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-3 md:mb-4 mt-1">
+                        <span className="text-purple-300 text-sm md:text-base">{job.company}</span>
+                        <span className="text-gray-400 text-xs md:text-sm px-2 md:px-3 py-1 rounded-full bg-white/5 mt-1 md:mt-0 inline-block">{job.period}</span>
                       </div>
-                      <ul className="list-none text-gray-300 space-y-2">
+                      <ul className="list-none text-gray-300 text-sm md:text-base space-y-2">
                         {job.responsibilities.map((item, i) => (
                           <li key={i} className="flex items-start">
-                            <span className="text-purple-400 mr-2">►</span>
+                            <span className="text-purple-400 mr-2 text-xs md:text-sm">►</span>
                             {item}
                           </li>
                         ))}
@@ -657,69 +657,69 @@ export default function Home() {
               </div>
             </div>
             
-            <div>
+            <div className="mt-6 md:mt-0">
               <motion.div 
-                className="flex items-center mb-6"
+                className="flex items-center mb-4 md:mb-6"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5 }}
               >
-                <HiLightningBolt className="text-2xl mr-3 text-purple-400" />
-                <h3 className="text-2xl font-semibold text-white">Education</h3>
+                <HiLightningBolt className="text-xl md:text-2xl mr-2 md:mr-3 text-purple-400" />
+                <h3 className="text-xl md:text-2xl font-semibold text-white">Education</h3>
               </motion.div>
               
-              <div className="space-y-8 mb-10">
+              <div className="space-y-4 md:space-y-8 mb-6 md:mb-10">
                 {education.map((edu, index) => (
                   <motion.div 
                     key={index}
-                    className="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-xl relative overflow-hidden group"
+                    className="bg-white/5 border border-white/10 backdrop-blur-md p-4 md:p-6 rounded-xl relative overflow-hidden group"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, delay: 0.3 + (index * 0.2) }}
                   >
                     <div className="absolute h-full w-1 bg-purple-500/50 left-0 top-0 group-hover:bg-purple-500 transition-colors duration-300"></div>
                     
                     <div className="pl-3">
-                      <h4 className="text-xl font-semibold text-white">{edu.degree}</h4>
-                      <div className="flex justify-between items-center mb-2 mt-1">
-                        <span className="text-purple-300">{edu.institution}</span>
-                        <span className="text-gray-400 text-sm px-3 py-1 rounded-full bg-white/5">{edu.period}</span>
+                      <h4 className="text-lg md:text-xl font-semibold text-white">{edu.degree}</h4>
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2 mt-1">
+                        <span className="text-purple-300 text-sm md:text-base">{edu.institution}</span>
+                        <span className="text-gray-400 text-xs md:text-sm px-2 md:px-3 py-1 rounded-full bg-white/5 mt-1 md:mt-0 inline-block">{edu.period}</span>
                       </div>
-                      <p className="text-gray-300">{edu.grade}</p>
+                      <p className="text-gray-300 text-sm md:text-base">{edu.grade}</p>
                     </div>
                   </motion.div>
                 ))}
               </div>
               
               <motion.div 
-                className="flex items-center mb-6"
+                className="flex items-center mb-4 md:mb-6"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                <HiLightningBolt className="text-2xl mr-3 text-purple-400" />
-                <h3 className="text-2xl font-semibold text-white">Achievements</h3>
+                <HiLightningBolt className="text-xl md:text-2xl mr-2 md:mr-3 text-purple-400" />
+                <h3 className="text-xl md:text-2xl font-semibold text-white">Achievements</h3>
               </motion.div>
               
               <motion.div 
-                className="bg-white/5 border border-white/10 backdrop-blur-md p-6 rounded-xl relative overflow-hidden"
+                className="bg-white/5 border border-white/10 backdrop-blur-md p-4 md:p-6 rounded-xl relative overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
                 <div className="absolute h-full w-1 bg-purple-500/50 left-0 top-0"></div>
                 
-                <ul className="list-none text-gray-300 space-y-3 pl-3">
+                <ul className="list-none text-gray-300 text-sm md:text-base space-y-2 md:space-y-3 pl-3">
                   {achievements.map((item, index) => (
                     <motion.li 
                       key={index}
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
+                      viewport={{ once: true, margin: "-50px" }}
                       transition={{ duration: 0.4, delay: 0.6 + (index * 0.1) }}
                       className="flex items-start"
                     >

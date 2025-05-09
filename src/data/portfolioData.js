@@ -1,13 +1,13 @@
 const portfolioData = {
   personalInfo: {
-    name: "JOHN DOE",
+    name: "Satyam Tiwari",
     title: "Full-Stack Developer & React.js Specialist",
     location: "San Francisco, California, USA",
-    about: "Results-driven Web Developer with expertise in modern web technologies. Passionate about creating efficient, scalable applications with excellent user experiences.",
+    about: "Results-driven Web Developer with expertise in modern web technologies. Passionate about creating efficient, scalable applications with excellent user experiences. (All the Data is Dummy Data)",
     email: "john.doe@example.com",
     phone: "+1 234-567-8900",
-    github: "https://github.com/johndoe",
-    linkedin: "https://linkedin.com/in/johndoe"
+    github: "https://github.com/SatyamDevv",
+    linkedin: "https://www.linkedin.com/in/satyamdevv/"
   },
   
   experience: [
